@@ -1,0 +1,188 @@
+:root{
+    --primary-color:#eb4d2e;
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color:#dbdbdb;
+    --star-gold-color:#ffce3e;
+    --navbar-height:35px;
+    --header-height:140px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height:46px;
+}
+* {
+    box-sizing: inherit;
+}
+html{
+    /* Hack */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* p{
+    font-size: 1.6rem;
+} */
+/* Reponsive */
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+   
+}
+.grid__column-2{
+   padding-left:5px; 
+   padding-right: 5px;
+   width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left:6px; 
+    padding-right: 6px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left:5px; 
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+.btn{
+height: 34px;
+min-width: 124px;
+border: none;
+text-decoration: none;
+border-radius: 3px;
+font-size: 1.5rem;
+padding: 0 12px;
+outline: none;
+cursor: pointer;
+color: var(--text-color);
+display: inline-flex;
+justify-content: center;
+align-items: center;
+background-color: transparent;
+line-height: 1.6rem;
+}
+.btn.btn--size-s{
+ height: 32px;
+ font-size: 12px;
+ padding: 0 8px;
+}
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.btn.btn-primary{
+    background-color: tomato;
+    color: var(--while-color);
+}
+.btn.btn-disabled{
+    cursor: default;
+    background-color: #999;
+}
+/* Animation */
+@keyframes FadeIn{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: FadeIn linear 0.3s ;
+    display: none;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.modal__body{
+    /* background-color:white; */
+    --growth-from:0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;/* cho no nam len cao nhat*/
+    /* border-radius: 5px; */
+    animation: growth linear 0.1s;
+}
+.header__logo{
+    width: 200px;  
+}
+.header__mobile-search{
+    padding: 0 12px;
+}
+.header__search-checkbox:checked ~ .header-search{
+    display: flex;
+}
+.header__search
+.header__logo-img{
+    width: 150px;
+}
+/* selection */
+.select-input{
+height: 34px;
+padding: 0 12px;
+border-radius: 2px;
+background-color: var(--while-color);
+min-width: 200px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+}
+.select-input-list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background-color: var(--while-color);
+    padding: 8px 16px;
+    list-style: none;
+   display: none;
+   z-index: 1;
+}
+.select-input:hover
+.select-input-list{
+display: block;
+}
+.select-input-label{
+    font-size: 1.4rem;
+}
+.homme-filter-input-icon{
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    
+    position: relative;
+    top: 1px;
+}
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0 5px 0;
+}
+.select-input__link:hover{
+color: var(--primary-color);
+}
